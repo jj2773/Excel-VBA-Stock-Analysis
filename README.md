@@ -16,14 +16,20 @@ The first VBA coding for this analysis used a nested for loop.  The outer loop i
 ![alt text](https://github.com/jj2773/Excel-VBA-Stock-Analysis/blob/main/NestedForLoops_2018.PNG)
 
 
-Due to performance limitations it was desired to refactor this code.  By updating the code to only step through the stock data one time and then use an array to store stock performance values of interest the following improved times were achieved.
+Due to performance limitations it was desired to refactor this code.  By updating the code to only step through the stock data one time, and then use an array to store stock performance values of interest the following improved times were achieved.  
 
 ![alt text](https://github.com/jj2773/Excel-VBA-Stock-Analysis/blob/main/VBA_Challenge_2017.PNG)
 
 
 ![alt text](https://github.com/jj2773/Excel-VBA-Stock-Analysis/blob/main/VBA_Challenge_2018.PNG)
 
+Also, a conditional statement was added during the code refactoring to allow the yearly stock listing tables to contain stocks that were not of interest.  The code will just skip over these stocks since they are not in the list of stocks to be analyzed.  
+
 
 ## Summary
 
-The new code refactoring is much faster since only one pass is made over the stock data (one for loop).  In the previous code there was 12 passes over the same stock data since there were 12 stocks of interest being checked by the outer for loop.   With this approach if the number of stocks of interest increases then the number of passes, hence compute time, also increases.  This is a major dissadvantage of this approach, but the advantage is simplicity.  Our refactored approach using an array to store data is more complex to debug, but it is much more computationally efficient in the approach.
+It is possible that code refactoring will likely not been seen of much value to stakeholders.  What new features or enhancements are being obtained for the reinvestment of time and money?  If it is only speed, it is possibly seen by the stakeholders as technical debt that should not have existed originally. From the developers viewpoint, code refactoring could provide an opportunity to clean, optimize, and remove potential bugs.
+
+In our code refactoring case, the new code is much faster since only one pass is made over the stock data (one for loop).  In the previous code there were 12 passes over the same stock data since there were 12 stocks of interest being checked by the outer for loop.   With this approach if the number of stocks of interest increases then the number of passes, hence compute time, also increases.  This is a major dissadvantage of this approach, but the advantage is simplicity.  Our refactored approach using an array to store data is more complex to debug and requires separate loops for formatting needs, but it is much more computationally efficient in the approach.  
+
+.
